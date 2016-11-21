@@ -195,7 +195,7 @@ public class Mystack { // �洢�����
 	/**
 	 * @param str
 	 */
-	public void derivative(String str) { // �󵼺���
+	public String derivative(String str) { // �󵼺���
 		String vars[] = new String[100];
 		int top = 0;
 		vars[top++] = str;
@@ -225,6 +225,7 @@ public class Mystack { // �洢�����
 				}
 			}
 		}
-		System.out.println(ans.substring(1));
+		return ans.substring(1);
+		//System.out.println(ans.substring(1));
 	}
 }

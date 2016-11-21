@@ -20,25 +20,25 @@ class Sol {
     public static void main(String args[])
     { 
     	Sol sol = new Sol();
-		String result = sol.simplify("x*yy*zzz","!simplify x=2");
+		String result = sol.Derivative("x*yy*zzz","!d/dx");
 		System.out.println(result);
     }
     
-    public String simplify(String ss,String str){ 
+    public String Derivative(String ss,String str){ 
     	core.clear();
     	if (isExpression(ss)) {
             preCore = core;
             //System.out.println(ss);
         } else {
             //System.out.println("Error , expression error !");
-            return"Error , expression error !";
+            //return"Error , expression error !";
         }
-    	if (isSimplify(str)) {
-            return simplify1(str);
-        } else {
-			//System.out.println("Error , format error !");
-        	return "Error , format error !";
-        } 
+    	//if (isDerivative(str)) {
+            return derivative(str);
+        //} else {
+        //	return "Error , format error !"; 
+		//} 
+    	
     }
     
     public void work() {  //�����������ܺ���
@@ -94,10 +94,10 @@ class Sol {
     /**
      * @param str
      */
-    private void derivative(String str) { //��
+    private String derivative(String str) { //��
         str = str.substring(4);
         str = str.trim();
-        preCore.derivative(str);
+        return preCore.derivative(str);
     }
 
     /**
